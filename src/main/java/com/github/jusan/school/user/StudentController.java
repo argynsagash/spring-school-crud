@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-//@SecurityRequirement(name = "basicauth")
+@SecurityRequirement(name = "basicauth")
 @RequestMapping("/students")
 public class StudentController {
     @Autowired

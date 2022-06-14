@@ -21,15 +21,15 @@ public class RestConfig {
     }
 
     @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http.authorizeHttpRequests()
-                .antMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll() // разрешить доступ всем
-                //.anyRequest().authenticated() // любой запрос требует авторизации
+                .antMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
+                .anyRequest().authenticated()
                 .and()
-                .httpBasic() // Basic аутентификация
+                .httpBasic()
                 .and()
-                .csrf().disable() // Отключаем csrf токены
+                .csrf().disable()
                 .build();
     }
-    
+
 }
